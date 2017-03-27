@@ -18,5 +18,6 @@ public class App {
         //System.out.println( "Hello World!" );
     	LOGGER.info("Arnaud test succeed");
     	LOGGER.info("Victor test succeed");
+    	LOGGER.info("Jean-Yann test succeed");
     }
 }
