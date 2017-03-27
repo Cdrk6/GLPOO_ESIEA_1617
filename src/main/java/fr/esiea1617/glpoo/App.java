@@ -19,5 +19,6 @@ public class App {
     	LOGGER.info("Arnaud test succeed");
     	LOGGER.info("Victor test succeed");
     	LOGGER.info("Jean-Yann test succeed");
+    	LOGGER.info("Floriane test succeed");
     }
 }
