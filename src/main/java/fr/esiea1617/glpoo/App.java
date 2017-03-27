@@ -16,6 +16,6 @@ public class App {
     	
     	BasicConfigurator.configure();
         //System.out.println( "Hello World!" );
-    	LOGGER.debug("Hello world!");
+    	LOGGER.info("Arnaud test succeed");
     }
 }
