@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import fr.esiea1617.glpoo.domain.Map;
 
 /**
+ *
  * Hello world!
  *
  */

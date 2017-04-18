@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Map {
+	
 
 	private int width;
 	private int height;
