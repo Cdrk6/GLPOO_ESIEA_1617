@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Map {
-	
 
 	private int width;
 	private int height;
@@ -19,7 +18,6 @@ public class Map {
 
 		eggs = new ArrayList<Egg>();
 		rocks = new ArrayList<Rock>();
-		children = new ArrayList<Child>();
 
 		File mapFile = getFile("mapFile.txt");
 		Scanner scan;
@@ -41,6 +39,8 @@ public class Map {
 
 		System.out.println("width : " + width);
 		System.out.println("height : " + height);
+
+		childrenCreation();
 	}
 
 	private File getFile(String fileName) {
@@ -135,6 +135,81 @@ public class Map {
 				info = "";
 				rocks.add(new Rock(Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1])));
 				System.out.println("rock created");
+			}
+		}
+	}
+
+	private void childrenCreation() {
+
+		children = new ArrayList<Child>();
+
+		File childrenFile = getFile("childrenFile.txt");
+		Scanner scan;
+		try {
+			scan = new Scanner(childrenFile);
+			StringBuilder result = new StringBuilder("");
+
+			while (scan.hasNextLine()) {
+				String line = scan.nextLine();
+				if (line != null && !line.isEmpty()) {
+					if (line.charAt(0) != '#')
+						createChild(line);
+				}
+				result.append(line).append("\n");
+			}
+			scan.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void createChild(String childInstruction) {
+
+		int remainingInfo = 4;
+		String info = "";
+		System.out.println("createChild " + childInstruction);
+
+		String[] coordinates = new String[2];
+		coordinates[0] = coordinates[1] = "";
+		char dir = ' ';
+		ArrayList<Character> depl = new ArrayList<Character>();
+		String name = "";
+
+		for (int i = 1, n = childInstruction.length(); i < n; i++) {
+			char c = childInstruction.charAt(i);
+
+			if (Character.isDigit(c) || c == '-' || Character.isLetter(c)) {
+				info += c;
+			}
+
+			if ((c == ' ' || i == n - 1) && info != "") {
+				if (remainingInfo == 4) {
+
+					coordinates = info.split("-");
+					info = "";
+					remainingInfo--;
+
+				} else if (remainingInfo == 3) {
+
+					dir = info.toCharArray()[0];
+					info = "";
+					remainingInfo--;
+
+				} else if (remainingInfo == 2) {
+					for (char ch : info.toCharArray()) {
+						depl.add(new Character(ch));
+					}
+					info = "";
+					remainingInfo--;
+				} else if (remainingInfo == 1) {
+
+					name = info;
+					info = "";
+					remainingInfo--;
+					children.add(new Child(Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]), dir,
+							depl, name));
+					System.out.println("child created");
+				}
 			}
 		}
 	}

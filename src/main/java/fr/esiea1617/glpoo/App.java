@@ -27,6 +27,9 @@ public class App {
     	
     	map = new Map();
     	
-    	
+    	System.out.println(map.getHeight() + " - " + map.getWidth());
+    	System.out.println(map.getChildren());
+    	System.out.println(map.getEggs());
+    	System.out.println(map.getRocks());
     }
 }
