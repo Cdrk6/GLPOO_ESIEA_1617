@@ -3,6 +3,7 @@ package fr.esiea1617.glpoo.domain;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -207,11 +208,23 @@ public class Map {
 					info = "";
 					remainingInfo--;
 					children.add(new Child(Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]), dir,
-							depl, name));
+							depl, name, this));
 					System.out.println("child created");
 				}
 			}
 		}
+	}
+	
+	public boolean isThereARockInFrontOf(Child child) {
+		
+		for(Iterator<Rock> rock = rocks.iterator(); rock.hasNext(); ) {
+		    if (rock.next().getX() == child.getX() && rock.next().getY() == child.getY()) return true;
+		}
+		return false;
+	}
+	
+	public void removeEgg(Egg egg) {
+		eggs.remove(egg);
 	}
 
 	public int getWidth() {

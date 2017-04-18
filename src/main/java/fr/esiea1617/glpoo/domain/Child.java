@@ -1,6 +1,7 @@
 package fr.esiea1617.glpoo.domain;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Child {
 	
@@ -9,23 +10,22 @@ public class Child {
 	private String name;
 	private char direction;
 	private ArrayList<Character> displacement;
-	private boolean isMoving;
 	private ArrayList<Egg> eggs;
 	private Map map;
 	
-	public Child(int x, int y, char dir, ArrayList<Character> displ, String n) {
+	public Child(int x, int y, char dir, ArrayList<Character> displ, String n, Map m) {
 		posX = x;
 		posY = y;
 		name = n;
 		direction = dir;
 		displacement = displ;
-		isMoving = true;
 		eggs = new ArrayList<Egg>();
+		map = m;
 		}
 	
 	public void move() {
 		
-		if (isMoving == false) {
+		if (map.isThereARockInFrontOf(this)) {
 			while (displacement.get(0) == 'A') {
 				displacement.remove(0);
 			}
@@ -43,6 +43,8 @@ public class Child {
 				break;
 		}
 		displacement.remove(0);
+		System.out.println(name + " has moved");
+		lookForEgg();
 	}
 	
 	private void advance() {
@@ -95,15 +97,26 @@ public class Child {
 		}
 	}
 	
+	private void lookForEgg() {
+		for (Iterator<Egg> egg  = map.getEggs().iterator(); egg.hasNext(); ) {
+			if (egg.next().getX() == posX && egg.next().getY() == posY) {
+				takeEgg(egg.next());
+				System.out.println(name + " found an egg!");
+			}
+		}
+	}
+	
 	public void takeEgg(Egg e) {
 		eggs.add(e);
+		map.removeEgg(e);
+		System.out.println(name + " took an egg!");
 	}
 	
-	public void stop() {
-		isMoving = false;
+	public int getX() {
+		return posX;
 	}
 	
-	public void resume() {
-		isMoving = true;
+	public int getY() {
+		return posY;
 	}
 }
