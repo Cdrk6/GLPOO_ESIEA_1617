@@ -3,11 +3,15 @@ package fr.esiea1617.glpoo;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
+import fr.esiea1617.glpoo.domain.Map;
+
 /**
  * Hello world!
  *
  */
 public class App {
+	
+	private static Map map;
 	
     private static final Logger LOGGER = Logger.getLogger(App.class);
 	
@@ -19,6 +23,9 @@ public class App {
     	LOGGER.info("Victor test succeed");
     	LOGGER.info("Jean-Yann test succeed");
     	LOGGER.info("Floriane test succeed");
+    	
+    	map = new Map();
+    	
     	
     }
 }
