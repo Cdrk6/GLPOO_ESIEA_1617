@@ -10,7 +10,6 @@ import org.apache.log4j.Logger;
 public class App {
 	
     private static final Logger LOGGER = Logger.getLogger(App.class);
-
 	
     public static void main( String[] args ) {
     	
@@ -20,5 +19,6 @@ public class App {
     	LOGGER.info("Victor test succeed");
     	LOGGER.info("Jean-Yann test succeed");
     	LOGGER.info("Floriane test succeed");
+    	
     }
 }
