@@ -29,7 +29,7 @@ public class Map {
 			while (scan.hasNextLine()) {
 				String line = scan.nextLine();
 				if (line != null && !line.isEmpty()) {
-					creationTree(line);
+					parseLine(line);
 				}
 				result.append(line).append("\n");
 			}
@@ -51,7 +51,7 @@ public class Map {
 		return file;
 	}
 
-	private void creationTree(String instruction) {
+	private void parseLine(String instruction) {
 		char c = instruction.charAt(0);
 		switch (c) {
 		case 'J':
@@ -217,8 +217,18 @@ public class Map {
 	
 	public boolean isThereARockInFrontOf(Child child) {
 		
-		for(Iterator<Rock> rock = rocks.iterator(); rock.hasNext(); ) {
-		    if (rock.next().getX() == child.getX() && rock.next().getY() == child.getY()) return true;
+		for(Iterator<Rock> rockIt = rocks.iterator(); rockIt.hasNext(); ) {
+		    Rock rock = rockIt.next();
+			if (rock.getX() == child.getNextX() && rock.getY() == child.getNextY()) return true;
+		}
+		return false;
+	}
+	
+	public boolean isthereAChildInFrontOf(Child subjectChild) {
+		
+		for (Iterator<Child> childIt = children.iterator(); childIt.hasNext(); ) {
+			Child child = childIt.next();
+			if (subjectChild.getNextX() == child.getNextX() && subjectChild.getNextY() == child.getNextY()) return true;
 		}
 		return false;
 	}

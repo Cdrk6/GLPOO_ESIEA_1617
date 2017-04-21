@@ -32,9 +32,10 @@ public class App {
 		 * 		
 		 */
 
-		for(Iterator<Child> child = map.getChildren().iterator(); child.hasNext(); ) {
-		    child.next().move();
+		for (int index = 0; index < 8; index++) {
+			for(Iterator<Child> child = map.getChildren().iterator(); child.hasNext(); ) {
+				child.next().move();
+			}
 		}
-
 	}
 }

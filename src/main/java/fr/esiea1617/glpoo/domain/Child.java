@@ -6,6 +6,8 @@ import java.util.Iterator;
 public class Child {
 	
 	private int posX;
+	private int nextX;
+	private int nextY;
 	private int posY;
 	private String name;
 	private char direction;
@@ -19,49 +21,75 @@ public class Child {
 		name = n;
 		direction = dir;
 		displacement = displ;
+		System.out.println(displacement);
 		eggs = new ArrayList<Egg>();
 		map = m;
 		}
 	
 	public void move() {
 		
+		nextX = calculateNextX();
+		nextY = calculateNextY();
+		
+		if (displacement.isEmpty()) return;
 		if (map.isThereARockInFrontOf(this)) {
 			while (displacement.get(0) == 'A') {
 				displacement.remove(0);
 			}
 		}
 		
+		if (map.isthereAChildInFrontOf(this)) {
+			return;
+		}
+		
+		System.out.println(displacement.size());
 		switch(displacement.get(0)) {
 			case 'A':
 				advance();
+				System.out.println(name + " has moved to " + posX + " " + posY);
 				break;
 			case 'G':
 				turnLeft();
+				System.out.println(name + " has turned");
 				break;
 			case 'D':
 				turnRight();
+				System.out.println(name + " has turned");
 				break;
 		}
 		displacement.remove(0);
-		System.out.println(name + " has moved");
 		lookForEgg();
 	}
 	
 	private void advance() {
+		posX = nextX;
+		posY = nextY;
+	}
+	
+	private int calculateNextX() {
+		
 		switch(direction) {
-			case 'N':
-				if (posY != 1) posY--;
-				break;
-			case 'S':
-				if (posY != map.getHeight()) posY++;
-				break;
 			case 'W':
-				if (posX != 1) posX--;
+				if (posX > 1) return posX-1;
 				break;
 			case 'E':
-				if (posX != map.getWidth()) posX++;
+				if (posX < map.getWidth()) return posX+1;
 				break;
 		}
+		return posX;
+	}
+	
+	private int calculateNextY() {
+		
+		switch(direction) {
+			case 'N':
+				if (posY > 1) return posY-1;
+				break;
+			case 'S':
+				if (posY < map.getHeight()) return posY+1;
+				break;
+		}
+		return posY;
 	}
 	
 	private void turnLeft() {
@@ -98,10 +126,12 @@ public class Child {
 	}
 	
 	private void lookForEgg() {
-		for (Iterator<Egg> egg  = map.getEggs().iterator(); egg.hasNext(); ) {
-			if (egg.next().getX() == posX && egg.next().getY() == posY) {
-				takeEgg(egg.next());
+		for (Iterator<Egg> eggIt  = map.getEggs().iterator(); eggIt.hasNext(); ) {
+			Egg egg = eggIt.next();
+			if (egg.getX() == posX && egg.getY() == posY) {
 				System.out.println(name + " found an egg!");
+				takeEgg(egg);
+				break;
 			}
 		}
 	}
@@ -118,5 +148,13 @@ public class Child {
 	
 	public int getY() {
 		return posY;
+	}
+	
+	public int getNextX() {
+		return nextX;
+	}
+	
+	public int getNextY() {
+		return nextY;
 	}
 }
