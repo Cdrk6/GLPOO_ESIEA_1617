@@ -28,6 +28,8 @@ public class Child {
 	
 	public void move() {
 		
+		if (lookForEgg()) return;
+		
 		nextX = calculateNextX();
 		nextY = calculateNextY();
 		
@@ -58,7 +60,6 @@ public class Child {
 				break;
 		}
 		displacement.remove(0);
-		lookForEgg();
 	}
 	
 	private void advance() {
@@ -125,15 +126,16 @@ public class Child {
 		}
 	}
 	
-	private void lookForEgg() {
+	private boolean lookForEgg() {
 		for (Iterator<Egg> eggIt  = map.getEggs().iterator(); eggIt.hasNext(); ) {
 			Egg egg = eggIt.next();
 			if (egg.getX() == posX && egg.getY() == posY) {
 				System.out.println(name + " found an egg!");
 				takeEgg(egg);
-				break;
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	public void takeEgg(Egg e) {
@@ -156,5 +158,13 @@ public class Child {
 	
 	public int getNextY() {
 		return nextY;
+	}
+	
+	public boolean hasFinished() {
+		return displacement.isEmpty();
+	}
+	
+	public String getName() {
+		return name;
 	}
 }

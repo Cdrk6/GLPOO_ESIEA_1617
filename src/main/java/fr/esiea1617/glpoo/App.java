@@ -23,6 +23,7 @@ public class App {
 		LOGGER.info("Jean-Yann test succeed");
 		LOGGER.info("Floriane test succeed");
 
+		boolean going_on = true;
 		map = new Map();
 
 		/**
@@ -31,10 +32,22 @@ public class App {
 		 * 
 		 * 		
 		 */
-
-		for (int index = 0; index < 8; index++) {
-			for(Iterator<Child> child = map.getChildren().iterator(); child.hasNext(); ) {
-				child.next().move();
+		
+		long base_time = System.nanoTime();
+		long intermediate_time = System.nanoTime();
+		
+		//iterator sur :hasFinished de chaque enfant.
+		while (going_on) {
+			base_time = System.nanoTime();
+			going_on = false;
+			for(Iterator<Child> childIt = map.getChildren().iterator(); childIt.hasNext(); ) {
+				Child child = childIt.next();
+				child.move();
+				if (!child.hasFinished()) going_on = true;
+			}
+			intermediate_time = System.nanoTime();
+			while (intermediate_time - base_time < 1000000000) {
+				intermediate_time = System.nanoTime();
 			}
 		}
 	}

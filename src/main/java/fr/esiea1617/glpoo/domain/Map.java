@@ -209,30 +209,33 @@ public class Map {
 					remainingInfo--;
 					children.add(new Child(Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]), dir,
 							depl, name, this));
-					System.out.println("child created");
+					System.out.println(name + " created");
 				}
 			}
 		}
 	}
-	
+
 	public boolean isThereARockInFrontOf(Child child) {
-		
-		for(Iterator<Rock> rockIt = rocks.iterator(); rockIt.hasNext(); ) {
-		    Rock rock = rockIt.next();
-			if (rock.getX() == child.getNextX() && rock.getY() == child.getNextY()) return true;
+
+		for (Iterator<Rock> rockIt = rocks.iterator(); rockIt.hasNext();) {
+			Rock rock = rockIt.next();
+			if (rock.getX() == child.getNextX() && rock.getY() == child.getNextY())
+				return true;
 		}
 		return false;
 	}
-	
+
 	public boolean isthereAChildInFrontOf(Child subjectChild) {
-		
-		for (Iterator<Child> childIt = children.iterator(); childIt.hasNext(); ) {
+
+		for (Iterator<Child> childIt = children.iterator(); childIt.hasNext();) {
 			Child child = childIt.next();
-			if (subjectChild.getNextX() == child.getNextX() && subjectChild.getNextY() == child.getNextY()) return true;
+			if (subjectChild.getNextX() == child.getNextX() && subjectChild.getNextY() == child.getNextY()
+					&& subjectChild.getName() != child.getName())
+				return true;
 		}
 		return false;
 	}
-	
+
 	public void removeEgg(Egg egg) {
 		eggs.remove(egg);
 	}
