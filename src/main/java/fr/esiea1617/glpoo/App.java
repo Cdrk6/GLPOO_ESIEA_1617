@@ -22,6 +22,7 @@ public class App {
 		LOGGER.info("Victor test succeed");
 		LOGGER.info("Jean-Yann test succeed");
 		LOGGER.info("Floriane test succeed");
+		LOGGER.info("Ammallan test succeed");
 
 		boolean going_on = true;
 		map = new Map();
