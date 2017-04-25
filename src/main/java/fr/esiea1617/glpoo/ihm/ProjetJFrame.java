@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 
 public class ProjetJFrame extends JFrame{
 	
+	private static final long serialVersionUID = -638731145561555723L;
+	
 	public ProjetJFrame() {
         setTitle("Chasse aux oeufs");
         setPreferredSize(new Dimension(500, 400));
