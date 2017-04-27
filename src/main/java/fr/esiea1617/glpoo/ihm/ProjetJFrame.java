@@ -49,6 +49,9 @@ public class ProjetJFrame extends JFrame{
 	JLabel titre;
 	JLabel soustitre;
 	
+	JButton jouer;
+	JButton quitter;
+	
 	JButton fichier1;
 	JButton fichier2;
 	JButton fichier3;
@@ -58,16 +61,13 @@ public class ProjetJFrame extends JFrame{
 	JButton fichier7;
 	JButton fichier8;
 	
-	Jeu debut;
-	
 	JPanel pane = new JPanel();
 	
 	public ProjetJFrame() {
         setTitle("Chasse aux oeufs");
-        setPreferredSize(new Dimension(960, 820));
+        setPreferredSize(new Dimension(700, 720));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         //setLocationRelativeTo(null);
-        setLayout(new GridLayout(4,1));
         
         /*ImageIcon image = new ImageIcon("src/main/ressources/menu.png");
         JLabel label = new JLabel(image);
@@ -84,19 +84,30 @@ public class ProjetJFrame extends JFrame{
         add(panel1);*/
         
         try {
-			pane =setBackgroundImage(this, new File("src/main/ressources/menu.png"));
+			pane = setBackgroundImage(this, new File("src/main/ressources/menu.png"));
+			
+			pane.setLayout(null);
+			
+			jouer = new JButton("Jouer");
+			jouer.setBounds(130, 285, 150, 90);
+	                
+			quitter = new JButton("Quitter");
+			quitter.setBounds(430, 285, 150, 90);
+			
+			pane.add(jouer);
+			pane.add(quitter);
+			
+			add(pane);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		//pane.setLayout(null);
         
         /*panel2 = new JPanel(new FlowLayout(FlowLayout.CENTER));
         soustitre = new JLabel("Choisissez un fichier à exécuter");
         Font font2 = new Font("Arial", Font.BOLD, 20);
         soustitre.setFont(font2);
         panel2.add(soustitre);
-        add(panel2);*/
+        add(panel2);
         
         panel3 = new JPanel(new GridLayout(4,2));
         
@@ -142,8 +153,8 @@ public class ProjetJFrame extends JFrame{
         panel3.add(panel38);
         panel3.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
         
-        add(panel3);
-        //add(new JScrollPane());
+        add(panel3, BorderLayout.CENTER);*/
+        
         
         pack();
     }
@@ -163,8 +174,6 @@ public class ProjetJFrame extends JFrame{
 			}
 		};
 		
-		frame.setContentPane(panel);
-		
 		return panel;
 	}
 	
@@ -176,8 +185,8 @@ public class ProjetJFrame extends JFrame{
 
 		public void actionPerformed(ActionEvent arg0) {
 			LOGGER.debug("Ouverture du fichier 1");		
-			debut = new Jeu();
-			debut.setVisible(true);
+			//debut = new Jeu();
+			//debut.setVisible(true);
 			dispose();
 		}
 		
