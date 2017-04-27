@@ -34,32 +34,8 @@ public class ProjetJFrame extends JFrame{
 	
 	private static final Logger LOGGER = Logger.getLogger(ProjetJFrame.class);
 	
-	JPanel panel1;
-	JPanel panel2;
-	JPanel panel3;
-	JPanel panel31;
-	JPanel panel32;
-	JPanel panel33;
-	JPanel panel34;
-	JPanel panel35;
-	JPanel panel36;
-	JPanel panel37;
-	JPanel panel38;
-	
-	JLabel titre;
-	JLabel soustitre;
-	
 	JButton jouer;
 	JButton quitter;
-	
-	JButton fichier1;
-	JButton fichier2;
-	JButton fichier3;
-	JButton fichier4;
-	JButton fichier5;
-	JButton fichier6;
-	JButton fichier7;
-	JButton fichier8;
 	
 	JPanel pane = new JPanel();
 	
@@ -67,32 +43,17 @@ public class ProjetJFrame extends JFrame{
         setTitle("Chasse aux oeufs");
         setPreferredSize(new Dimension(700, 720));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //setLocationRelativeTo(null);
-        
-        /*ImageIcon image = new ImageIcon("src/main/ressources/menu.png");
-        JLabel label = new JLabel(image);
-        JScrollPane scrollPane = new JScrollPane(label);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        add(scrollPane);
-        
-        panel1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        titre = new JLabel("Chasse aux oeufs");
-        Font font = new Font("Arial", Font.BOLD, 30);
-		titre.setFont(font);
-        panel1.add(titre);
-        add(panel1);*/
         
         try {
 			pane = setBackgroundImage(this, new File("src/main/ressources/menu.png"));
 			
 			pane.setLayout(null);
 			
-			jouer = new JButton("Jouer");
-			jouer.setBounds(130, 285, 150, 90);
+			jouer = new JButton(new jouerAction("Jouer"));
+			jouer.setBounds(125, 285, 150, 90);
 	                
-			quitter = new JButton("Quitter");
-			quitter.setBounds(430, 285, 150, 90);
+			quitter = new JButton(new quitterAction("Quitter"));
+			quitter.setBounds(425, 285, 150, 90);
 			
 			pane.add(jouer);
 			pane.add(quitter);
@@ -177,104 +138,32 @@ public class ProjetJFrame extends JFrame{
 		return panel;
 	}
 	
-	private class fichier1Action extends AbstractAction {
+	private class jouerAction extends AbstractAction {
 		
-		public fichier1Action(String text) {
+		public jouerAction(String text){
 			super(text);
 		}
 
 		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 1");		
-			//debut = new Jeu();
-			//debut.setVisible(true);
+			LOGGER.debug("Jouons");
+			ChoixFichier ch = new ChoixFichier();
+			ch.setVisible(true);
 			dispose();
 		}
 		
 	}
 	
-	private class fichier2Action extends AbstractAction {
+	private class quitterAction extends AbstractAction {
 		
-		public fichier2Action(String text) {
+		public quitterAction(String text){
 			super(text);
 		}
 
 		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 2");
-		}
-		
-	}
-	
-	private class fichier3Action extends AbstractAction {
-		
-		public fichier3Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 3");
+			LOGGER.debug("Au revoir !");
+			dispose();
 		}
 		
 	}
 
-	private class fichier4Action extends AbstractAction {
-		
-		public fichier4Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 4");
-		}
-		
-	}
-	
-	private class fichier5Action extends AbstractAction {
-		
-		public fichier5Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 5");
-		}
-		
-	}
-	
-	private class fichier6Action extends AbstractAction {
-		
-		public fichier6Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 6");
-		}
-		
-	}
-	
-	private class fichier7Action extends AbstractAction {
-		
-		public fichier7Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 7");
-		}
-		
-	}
-	
-	private class fichier8Action extends AbstractAction {
-		
-		public fichier8Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 8");
-			
-		}
-		
-	}
-	
 }
