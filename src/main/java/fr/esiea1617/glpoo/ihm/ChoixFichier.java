@@ -113,7 +113,16 @@ public class ChoixFichier extends JFrame {
 		}
 
 		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 1");		
+			LOGGER.debug("Ouverture du fichier 1");
+			dispose();
+			JFrame petitest = new JFrame();
+			petitest.setTitle("Chasse aux oeufs");
+	        petitest.setPreferredSize(new Dimension(906, 636));
+	        petitest.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	        IngameJFrame terrain = new IngameJFrame();
+	        petitest.add(terrain);
+	        petitest.pack();
+	        petitest.setVisible(true);
 		}
 		
 	}

@@ -70,51 +70,7 @@ public class ProjetJFrame extends JFrame{
         panel2.add(soustitre);
         add(panel2);
         
-        panel3 = new JPanel(new GridLayout(4,2));
-        
-        panel31 = new JPanel();
-        fichier1 = new JButton(new fichier1Action("Fichier 1"));
-        panel31.add(fichier1);
-        
-        panel32 = new JPanel();
-        fichier2 = new JButton(new fichier2Action("Fichier 2"));
-        panel32.add(fichier2);
-        
-        panel33 = new JPanel();
-        fichier3 = new JButton(new fichier3Action("Fichier 3"));
-        panel33.add(fichier3);
-        
-        panel34 = new JPanel();
-        fichier4 = new JButton(new fichier4Action("Fichier 4"));
-        panel34.add(fichier4);
-        
-        panel35 = new JPanel();
-        fichier5 = new JButton(new fichier5Action("Fichier 5"));
-        panel35.add(fichier5);
-        
-        panel36 = new JPanel();
-        fichier6 = new JButton(new fichier6Action("Fichier 6"));
-        panel36.add(fichier6);
-        
-        panel37 = new JPanel();
-        fichier7 = new JButton(new fichier7Action("Fichier 7"));
-        panel37.add(fichier7);
-        
-        panel38 = new JPanel();
-        fichier8 = new JButton(new fichier8Action("Fichier 8"));
-        panel38.add(fichier8);
-        
-        panel3.add(panel31);
-        panel3.add(panel32);
-        panel3.add(panel33);
-        panel3.add(panel34);
-        panel3.add(panel35);
-        panel3.add(panel36);
-        panel3.add(panel37);
-        panel3.add(panel38);
-        panel3.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
-        
-        add(panel3, BorderLayout.CENTER);*/
+        */
         
         
         pack();
