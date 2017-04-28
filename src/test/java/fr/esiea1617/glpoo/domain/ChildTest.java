@@ -25,6 +25,7 @@ public class ChildTest {
 	 }
 	
 	 @Test
+	 
 		public void testmoveX(){
 		 child.move();
 		 assertEquals(1,child.getX());
@@ -32,6 +33,7 @@ public class ChildTest {
 	 }
 	 
 	 @Test
+	 
 		public void testmoveY(){
 		 child.move();
 		 assertEquals(0,child.getY());
@@ -39,6 +41,7 @@ public class ChildTest {
 	 }
 	 
 	 @Test
+	 
 	 public void testInWallX(){
 		 childGoWall.move();
 		 assertEquals(5,childGoWall.getX());
