@@ -207,9 +207,15 @@ public class Map {
 					name = info;
 					info = "";
 					remainingInfo--;
-					children.add(new Child(Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]), dir,
-							depl, name, this));
-					System.out.println(name + " created");
+					int XCoordinate = Integer.parseInt(coordinates[0]);
+					int YCoordinate = Integer.parseInt(coordinates[1]);
+					
+					if ((XCoordinate > 1 && XCoordinate < width) || (YCoordinate > 1 && YCoordinate < height)) {
+						children.add(new Child(XCoordinate, YCoordinate, dir, depl, name, this));
+						System.out.println(name + " created");
+					} else {
+						System.out.println(name + " not created");
+					}
 				}
 			}
 		}
