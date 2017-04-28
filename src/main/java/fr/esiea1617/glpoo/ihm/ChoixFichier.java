@@ -38,14 +38,6 @@ public class ChoixFichier extends JFrame {
 	JPanel panel2;
 	JPanel panel3;
 	
-	JButton fichier1;
-	JButton fichier2;
-	JButton fichier3;
-	JButton fichier4;
-	JButton fichier5;
-	JButton fichier6;
-	JButton fichier7;
-	JButton fichier8;
 	JButton play;
 	
 	static String[] Terrain = {"Terrain 1","Terrain 2","Terrain 3","Terrain 4","Terrain 5","Terrain 6"};
@@ -58,7 +50,7 @@ public class ChoixFichier extends JFrame {
 		setTitle("Chasse aux oeufs");
         setPreferredSize(new Dimension(700, 720));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-                
+
         panel3 = new JPanel();
         
         try {
@@ -79,38 +71,6 @@ public class ChoixFichier extends JFrame {
 			play = new JButton(new Terrain1Action("PLAY"));
 			play.setBounds(300, 400, 100, 50);
 			panel3.add(play);
-			/*
-			fichier1 = new JButton(new fichier1Action("Fichier 1"));
-			fichier1.setBounds(125, 285, 100, 50);
-			panel3.add(fichier1);
-			
-			fichier2 = new JButton(new fichier2Action("Fichier 2"));
-			fichier2.setBounds(275, 285, 100, 50);
-			panel3.add(fichier2);
-			
-			fichier3 = new JButton(new fichier3Action("Fichier 3"));
-			fichier3.setBounds(425, 285, 100, 50);
-			panel3.add(fichier3);
-			
-			fichier4 = new JButton(new fichier4Action("Fichier 4"));
-			fichier4.setBounds(125, 385, 100, 50);
-			panel3.add(fichier4);
-			
-			fichier5 = new JButton(new fichier5Action("Fichier 5"));
-			fichier5.setBounds(275, 385, 100, 50);
-			panel3.add(fichier5);
-			
-			fichier6 = new JButton(new fichier6Action("Fichier 6"));
-			fichier6.setBounds(425, 385, 100, 50);
-			panel3.add(fichier6);
-	        
-	        fichier7 = new JButton(new fichier7Action("Fichier 7"));
-	        fichier7.setBounds(125, 485, 100, 50);
-			panel3.add(fichier7);
-	        
-	        fichier8 = new JButton(new fichier8Action("Fichier 8"));
-	        fichier8.setBounds(275, 485, 100, 50);
-			panel3.add(fichier8);*/
 			
 			add(panel3);
 		} catch (IOException e1) {
@@ -139,6 +99,8 @@ public class ChoixFichier extends JFrame {
 	}
 	
 	private class Terrain1Action extends AbstractAction {
+		int width = new Map().getWidth();
+		int height = new Map().getHeight();
 		
 		public Terrain1Action(String text) {
 			super(text);
@@ -148,7 +110,7 @@ public class ChoixFichier extends JFrame {
 			LOGGER.debug("Ouverture du Terrain 1");
 			dispose();
 			JFrame petitest = new JFrame();
-	        petitest.setPreferredSize(new Dimension(906, 636));
+	        petitest.setPreferredSize(new Dimension(width*80, height*80));
 	        petitest.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        IngameJFrame terrain = new IngameJFrame();
 	        petitest.add(terrain);
@@ -157,7 +119,6 @@ public class ChoixFichier extends JFrame {
 	        petitest.revalidate();
 	        petitest.repaint();
 		}
-		
 	}
 	
 	public static int ConversionTerrain(){

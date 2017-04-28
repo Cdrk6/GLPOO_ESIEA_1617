@@ -1,7 +1,7 @@
-E 1-1 E AADADAGA Julien
+J 6 5
 
-E 4-5 S GAADAAGA Helise
+C 2-1 2
+C 2-3 1
 
-E 0-0 N GAAGAAGD Bob
-
-E 125-145 W AAGAAD Hal
+R 5-6
+R 3-2

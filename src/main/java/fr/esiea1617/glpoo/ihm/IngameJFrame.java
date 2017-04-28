@@ -21,7 +21,7 @@ public class IngameJFrame extends JPanel {
 
 	private static final Logger LOGGER = Logger.getLogger(IngameJFrame.class);
 
-	private static long movingTime = 1000;
+	private static long movingTime = 500;
 
 	private int H;
 	private int W;
@@ -83,6 +83,7 @@ public class IngameJFrame extends JPanel {
 				intermediate_time.set(System.currentTimeMillis());
 			}
 		}
+		JOptionPane.showMessageDialog(this, "Fin du jeu");
 	}
 
 	public static long getMovingTime() {
@@ -114,8 +115,8 @@ public class IngameJFrame extends JPanel {
 		}
 
 		for (int k = 0; k < map.getChildren().size(); k++) {
-			LOGGER.debug(map.getChildren().get(k).getX());
-			LOGGER.debug(map.getChildren().get(k).getY());
+			//LOGGER.debug(map.getChildren().get(k).getX());
+			//LOGGER.debug(map.getChildren().get(k).getY());
 			terrain[map.getChildren().get(k).getX() - 1][map.getChildren()
 					.get(k).getY() - 1] = 3;
 		}
@@ -145,7 +146,7 @@ public class IngameJFrame extends JPanel {
 
 	public Image chargerImageRoche() {
 		Image img;
-		ImageIcon imageIcon = new ImageIcon("src/main/ressources/mur.png");
+		ImageIcon imageIcon = new ImageIcon("src/main/ressources/roche.png");
 		img = imageIcon.getImage().getScaledInstance(50, 50,
 				Image.SCALE_DEFAULT);
 		return img;
@@ -161,7 +162,7 @@ public class IngameJFrame extends JPanel {
 
 	public Image chargerImageOeuf() {
 		Image img;
-		ImageIcon imageIcon = new ImageIcon("src/main/ressources/obj.gif");
+		ImageIcon imageIcon = new ImageIcon("src/main/ressources/oeuf.png");
 		img = imageIcon.getImage().getScaledInstance(50, 50,
 				Image.SCALE_DEFAULT);
 		return img;
@@ -169,7 +170,7 @@ public class IngameJFrame extends JPanel {
 
 	public Image chargerImageEnfant() {
 		Image img;
-		ImageIcon imageIcon = new ImageIcon("src/main/ressources/S1.png");
+		ImageIcon imageIcon = new ImageIcon("src/main/ressources/enfant.png");
 		img = imageIcon.getImage().getScaledInstance(50, 50,
 				Image.SCALE_DEFAULT);
 		return img;

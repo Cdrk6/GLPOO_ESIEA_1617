@@ -7,27 +7,33 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import fr.esiea1617.glpoo.ihm.ChoixFichier;
 
 public class Map {
+	
+	private static final Logger LOGGER = Logger.getLogger(Map.class);
 
 	private int width;
 	private int height;
 	private int temp;
+	private int temp2;
 	private List<Egg> eggs;
 	private List<Rock> rocks;
 	private List<Child> children;
-	//String Carte = new String()
+	String Carte = new String();
+	String Enfant = new String();
 
 	public Map() {
 
 		eggs = new ArrayList<Egg>();
 		rocks = new ArrayList<Rock>();
-		
 		temp = ChoixFichier.ConversionTerrain();
 		System.out.println(temp);
+		echange();
 
-		File mapFile = getFile("mapFile.txt");
+		File mapFile = getFile(Carte+".txt");
 		Scanner scan;
 		try {
 			scan = new Scanner(mapFile);
@@ -51,16 +57,56 @@ public class Map {
 		childrenCreation();
 	}
 	
-	/*private echange(){
+	private String echange(){
 		temp = ChoixFichier.ConversionTerrain();
 		if(temp==1){
-			
+			Carte = "map1";
 		}
-	}*/
+		if(temp==2){
+			Carte = "map2";
+		}
+		if(temp==3){
+			Carte = "map3";
+		}
+		if(temp==4){
+			Carte = "map4";
+		}
+		if(temp==5){
+			Carte = "map5";
+		}
+		if(temp==6){
+			Carte = "map6";
+		}
+		return Carte;
+	}
+	
+	private String echange2(){
+		temp2 = ChoixFichier.ConversionEnfant();
+		if(temp2==1){
+			Enfant = "child1";
+		}
+		if(temp2==2){
+			Enfant = "child2";
+		}
+		if(temp2==3){
+			Enfant = "child3";
+		}
+		if(temp2==4){
+			Enfant = "child4";
+		}
+		if(temp2==5){
+			Enfant = "childrenFile";
+		}
+		if(temp2==6){
+			Enfant = "child1";
+		}
+		return Carte;
+	}
 
 	private File getFile(String fileName) {
 		// Get file from resources folder
 		ClassLoader classLoader = getClass().getClassLoader();
+		LOGGER.debug(fileName);
 		File file = new File(classLoader.getResource(fileName).getFile());
 		return file;
 	}
@@ -158,7 +204,12 @@ public class Map {
 
 		children = new ArrayList<Child>();
 
-		File childrenFile = getFile("childrenFile.txt");
+		temp2 = ChoixFichier.ConversionEnfant();
+		System.out.println(temp2);
+		echange2();
+
+		File childrenFile = getFile(Enfant +".txt");
+		//File childrenFile = getFile("childrenFile.txt");
 		Scanner scan;
 		try {
 			scan = new Scanner(childrenFile);
