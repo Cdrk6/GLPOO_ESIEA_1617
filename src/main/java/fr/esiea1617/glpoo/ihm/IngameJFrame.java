@@ -6,8 +6,8 @@ import java.awt.Toolkit;
 import java.util.Random;
 
 import javax.swing.*;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+
+import fr.esiea1617.glpoo.domain.Map;
 
 public class IngameJFrame extends JPanel{
 
@@ -19,10 +19,11 @@ public class IngameJFrame extends JPanel{
 	protected Random rand;
 	protected Image mur;
 	protected Image terre;
+	protected Map positions = new Map();
 	
 	public IngameJFrame(){
-		H = 5;
-		W = 5;
+		H = positions.getHeight();
+		W = positions.getWidth();
 		map = new int [H][W];
 		rand = new Random();
 		mur = chargerImage();
@@ -32,7 +33,7 @@ public class IngameJFrame extends JPanel{
 	public void afficheCarte(Graphics g){
 		for (int y = 0; y<H; y++){
 			for (int x = 0; x<W; x++){
-				afficherImage(mur,30*x,30*y,g);
+				afficherImage(mur,50*x,50*y,g);
 			}
 		}
 	}
@@ -50,7 +51,7 @@ public class IngameJFrame extends JPanel{
 	public Image chargerImage() {
 		Image img;
 		ImageIcon imageIcon = new ImageIcon("src/main/ressources/mur.png");
-		img = imageIcon.getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT);
+		img = imageIcon.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT);
 		return img;                
     }
 	
