@@ -45,6 +45,8 @@ public class App {
 		AtomicLong base_time = new AtomicLong(System.currentTimeMillis());
 		AtomicLong intermediate_time = new AtomicLong(System.currentTimeMillis());
 		
+		//new ProjetJFrame().setVisible(true);
+		
 		//iterator sur :hasFinished de chaque enfant.
 		while (going_on) {
 			base_time.set(System.currentTimeMillis());
@@ -60,7 +62,7 @@ public class App {
 			}
 		}
 		
-		new ProjetJFrame().setVisible(true);
+		
         
 	}
 	

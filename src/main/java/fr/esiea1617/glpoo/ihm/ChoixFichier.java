@@ -143,13 +143,14 @@ public class ChoixFichier extends JFrame {
 			LOGGER.debug("Ouverture du Terrain 1");
 			dispose();
 			JFrame petitest = new JFrame();
-			petitest.setTitle("Chasse aux oeufs");
 	        petitest.setPreferredSize(new Dimension(906, 636));
 	        petitest.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	        IngameJFrame terrain = new IngameJFrame();
 	        petitest.add(terrain);
 	        petitest.pack();
 	        petitest.setVisible(true);
+	        petitest.revalidate();
+	        petitest.repaint();
 		}
 		
 	}
