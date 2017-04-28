@@ -2,11 +2,15 @@ package fr.esiea1617.glpoo;
 
 import java.util.Iterator;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import fr.esiea1617.glpoo.domain.Child;
 import fr.esiea1617.glpoo.domain.Map;
+import fr.esiea1617.glpoo.ihm.ProjetJFrame;
 
 public class App {
 
@@ -51,5 +55,8 @@ public class App {
 				intermediate_time = System.nanoTime();
 			}
 		}
+		
+		new ProjetJFrame().setVisible(true);
+        
 	}
 }
