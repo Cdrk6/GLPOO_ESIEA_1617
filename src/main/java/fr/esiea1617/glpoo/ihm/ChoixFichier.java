@@ -43,10 +43,10 @@ public class ChoixFichier extends JFrame {
 	JButton fichier8;
 	JButton play;
 	
-	String[] Terrain = {"Terrain 1","Terrain 2","Terrain 3","Terrain 4","Terrain 5","Terrain 6"};
-	JComboBox ChoixTerrain = new JComboBox(Terrain);
-	String[] Enfant1 = {"Enfant 1","Enfant 2","Enfant 3","Enfant 4","Enfant 5","Enfant 6"};
-	JComboBox ChoixEnfant1 = new JComboBox(Enfant1);
+	static String[] Terrain = {"Terrain 1","Terrain 2","Terrain 3","Terrain 4","Terrain 5","Terrain 6"};
+	static JComboBox ChoixTerrain = new JComboBox(Terrain);
+	static String[] Enfant1 = {"Enfant 1","Enfant 2","Enfant 3","Enfant 4","Enfant 5","Enfant 6"};
+	static JComboBox ChoixEnfant1 = new JComboBox(Enfant1);
 	
 	
 	public ChoixFichier(){
@@ -154,7 +154,7 @@ public class ChoixFichier extends JFrame {
 		
 	}
 	
-	int ConversionTerrain(){
+	public static int ConversionTerrain(){
 		String map = new String(ChoixTerrain.getSelectedItem().toString());
 		int a=0;
 	    if(map.equals("Terrain 1")){
@@ -176,6 +176,30 @@ public class ChoixFichier extends JFrame {
 	    	a = 6;
 	    }
 	    return a;
+    }
+	
+	public static int ConversionEnfant(){
+		String child = new String(ChoixEnfant1.getSelectedItem().toString());
+		int b=0;
+	    if(child.equals("Enfant 1")){
+	    	b = 1;
+	    }
+	    if(child.equals("Enfant 2")){
+	    	b = 2;
+	    }
+	    if(child.equals("Enfant 3")){
+	    	b = 3;
+	    }
+	    if(child.equals("Enfant 4")){
+	    	b = 4;
+	    }
+	    if(child.equals("Enfant 5")){
+	    	b = 5;
+	    }
+	    if(child.equals("Enfant 6")){
+	    	b = 6;
+	    }
+	    return b;
     }
 	
 	

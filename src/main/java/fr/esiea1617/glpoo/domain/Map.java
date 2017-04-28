@@ -7,18 +7,25 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import fr.esiea1617.glpoo.ihm.ChoixFichier;
+
 public class Map {
 
 	private int width;
 	private int height;
+	private int temp;
 	private List<Egg> eggs;
 	private List<Rock> rocks;
 	private List<Child> children;
+	//String Carte = new String()
 
 	public Map() {
 
 		eggs = new ArrayList<Egg>();
 		rocks = new ArrayList<Rock>();
+		
+		temp = ChoixFichier.ConversionTerrain();
+		System.out.println(temp);
 
 		File mapFile = getFile("mapFile.txt");
 		Scanner scan;
@@ -43,6 +50,13 @@ public class Map {
 
 		childrenCreation();
 	}
+	
+	/*private echange(){
+		temp = ChoixFichier.ConversionTerrain();
+		if(temp==1){
+			
+		}
+	}*/
 
 	private File getFile(String fileName) {
 		// Get file from resources folder
