@@ -1,6 +1,6 @@
 E 1-1 E AADADAGA Julien
 
-E 4-5 S GAADAAGA Hélise
+E 4-5 S GAADAAGA Helise
 
 E 0-0 N GAAGAAGD Bob
 
