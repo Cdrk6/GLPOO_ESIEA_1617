@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.0" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="fr.esiea1617.glpoo.domain.Egg" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/domain/Egg.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1019" y="928"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="fr.esiea1617.glpoo.ihm.ProjetJFrame.jouerAction" 
+    project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/ProjetJFrame.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1452" y="297"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="fr.esiea1617.glpoo.ihm.ChoixFichier.ActionTerrain" 
+    project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/ChoixFichier.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="178" y="347"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="fr.esiea1617.glpoo.ihm.IngameJFrame" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/IngameJFrame.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="509" width="229" x="973" y="3"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="fr.esiea1617.glpoo.ihm.ChoixFichier" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/ChoixFichier.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="293" width="232" x="498" y="3"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="fr.esiea1617.glpoo.ihm.ChoixFichier.ActionEnfant" 
+    project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/ChoixFichier.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="418" y="400"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="fr.esiea1617.glpoo.ihm.ProjetJFrame" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/ProjetJFrame.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="185" width="232" x="1435" y="3"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="fr.esiea1617.glpoo.domain.Rock" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/domain/Rock.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1620" y="639"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="fr.esiea1617.glpoo.domain.Child" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/domain/Child.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="701" y="770"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="fr.esiea1617.glpoo.App" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/App.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="167" width="151" x="1242" y="3"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="fr.esiea1617.glpoo.domain.ExtraFunctions" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/domain/ExtraFunctions.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="131" width="252" x="52" y="3"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="fr.esiea1617.glpoo.ihm.ChoixFichier.Terrain1Action" 
+    project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/ChoixFichier.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="622" y="432"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="fr.esiea1617.glpoo.domain.Map" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/domain/Map.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1365" y="777"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="fr.esiea1617.glpoo.ihm.ChoixFichier.ItemState" 
+    project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/ChoixFichier.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="843" y="381"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="fr.esiea1617.glpoo.LauncherIHM" project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/LauncherIHM.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="95" width="114" x="344" y="3"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="fr.esiea1617.glpoo.ihm.ProjetJFrame.quitterAction" 
+    project="GLPOO_ESIEA_1617_Groupe_Alpou" 
+    file="/GLPOO_ESIEA_1617_Groupe_Alpou/src/main/java/fr/esiea1617/glpoo/ihm/ProjetJFrame.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1605" y="422"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="17">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <nesting id="18">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="12"/>  
+  </nesting>  
+  <association id="19">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="20" name="eggs">        
+        <position height="0" width="0" x="-49" y="-302"/>      
+      </attribute>      
+      <multiplicity id="21" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-49" y="-302"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="22">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="23" name="rocks">        
+        <position height="0" width="0" x="278" y="-572"/>      
+      </attribute>      
+      <multiplicity id="24" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="278" y="-572"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="25">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="26" name="map">        
+        <position height="0" width="0" x="196" y="-47"/>      
+      </attribute>      
+      <multiplicity id="27" minimum="0" maximum="1">        
+        <position height="0" width="0" x="196" y="-47"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="29" name="map">        
+        <position height="0" width="0" x="196" y="-47"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="1">        
+        <position height="0" width="0" x="196" y="-47"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="31">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </nesting>  
+  <nesting id="32">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="6"/>  
+  </nesting>  
+  <association id="33">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="34" name="child">        
+        <position height="0" width="0" x="-99" y="-223"/>      
+      </attribute>      
+      <multiplicity id="35" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-99" y="-223"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="36">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="16"/>  
+  </nesting>  
+  <nesting id="37">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="14"/>  
+  </nesting>  
+  <association id="38">    
+    <bendpoint x="975" y="676"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="39" name="children">        
+        <position height="0" width="0" x="-99" y="-223"/>      
+      </attribute>      
+      <multiplicity id="40" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-99" y="-223"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="42" name="eggs">        
+        <position height="0" width="0" x="-49" y="-302"/>      
+      </attribute>      
+      <multiplicity id="43" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-49" y="-302"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="45" name="map">        
+        <position height="0" width="0" x="196" y="-47"/>      
+      </attribute>      
+      <multiplicity id="46" minimum="0" maximum="1">        
+        <position height="0" width="0" x="196" y="-47"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
