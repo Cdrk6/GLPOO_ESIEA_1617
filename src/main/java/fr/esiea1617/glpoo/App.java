@@ -1,6 +1,8 @@
 package fr.esiea1617.glpoo;
 
 import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -15,6 +17,8 @@ import fr.esiea1617.glpoo.ihm.ProjetJFrame;
 public class App {
 
 	private static Map map;
+	private static long movingTime = 1000;
+	
 
 	private static final Logger LOGGER = Logger.getLogger(App.class);
 
@@ -38,25 +42,33 @@ public class App {
 		 * 		
 		 */
 		
-		long base_time = System.nanoTime();
-		long intermediate_time = System.nanoTime();
+		AtomicLong base_time = new AtomicLong(System.currentTimeMillis());
+		AtomicLong intermediate_time = new AtomicLong(System.currentTimeMillis());
 		
 		//iterator sur :hasFinished de chaque enfant.
 		while (going_on) {
-			base_time = System.nanoTime();
+			base_time.set(System.currentTimeMillis());
 			going_on = false;
 			for(Iterator<Child> childIt = map.getChildren().iterator(); childIt.hasNext(); ) {
 				Child child = childIt.next();
 				child.move();
 				if (!child.hasFinished()) going_on = true;
 			}
-			intermediate_time = System.nanoTime();
-			while (intermediate_time - base_time < 1000000000) {
-				intermediate_time = System.nanoTime();
+			intermediate_time.set(System.currentTimeMillis());
+			while (intermediate_time.longValue() - base_time.longValue() < movingTime) {
+				intermediate_time.set(System.currentTimeMillis());
 			}
 		}
 		
 		new ProjetJFrame().setVisible(true);
         
+	}
+	
+	public static long getMovingTime () {
+		return movingTime;
+	}
+	
+	public static void setMovingTime (long newMovingTime) {
+		movingTime = newMovingTime;
 	}
 }
