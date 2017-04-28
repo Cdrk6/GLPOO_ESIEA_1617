@@ -24,8 +24,7 @@ public class ChildTest {
 		 
 	 }
 	
-	 @Test
-	 
+	 @Test 
 		public void testmoveX(){
 		 child.move();
 		 assertEquals(1,child.getX());
