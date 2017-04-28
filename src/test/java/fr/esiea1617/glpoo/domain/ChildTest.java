@@ -31,6 +31,7 @@ public class ChildTest {
 		 
 	 }
 	 
+	 
 	 @Test
 		public void testmoveY(){
 		 child.move();
