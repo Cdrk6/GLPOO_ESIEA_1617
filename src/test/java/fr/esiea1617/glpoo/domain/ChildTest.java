@@ -39,6 +39,7 @@ public class ChildTest {
 		 
 	 }
 	 
+	 
 	 @Test
 	 
 	 public void testInWallX(){
