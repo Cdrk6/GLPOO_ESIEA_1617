@@ -13,6 +13,7 @@ public class ChildTest {
 	
 	private Child child;
 	private Child childGoWall;
+	private Child childegg;
 	
 	@Before 
 	 public void doBefore(){
@@ -21,7 +22,7 @@ public class ChildTest {
 		 displ.add('A');
 		 child = new Child(0,0,'E',displ,"buu",m);
 		 childGoWall = new Child(5,0,'N',displ,"Wall",m);
-		 
+		 childegg = new Child(2,1,'N',displ,"Wall",m); 
 	 }
 	
 	 @Test 
@@ -53,6 +54,12 @@ public class ChildTest {
 		 assertEquals(0,childGoWall.getY());
 	 }
 		
+	 @Test
+	 
+	 public void testlookforegg(){
+		 childegg.getegg();
+		 assertEquals(true,childegg.getegg());
+	 }
 		
     
     
