@@ -51,9 +51,16 @@ public class IngameJFrame extends JPanel {
 		oeuf = chargerImageOeuf();
 		enfant = chargerImageEnfant();
 		setIntegerMap();
-		runGame();
-		revalidate();
-		repaint();
+		Thread thread = new Thread (new Runnable () {
+
+			public void run() {
+				LOGGER.debug("run");
+				runGame();
+				revalidate();
+				repaint();
+			}
+		});
+		thread.start();
 	}
 
 	public void runGame() {
@@ -87,11 +94,6 @@ public class IngameJFrame extends JPanel {
 	}
 
 	public void setIntegerMap() {
-		AtomicLong base_time = new AtomicLong(System.currentTimeMillis());
-		AtomicLong intermediate_time = new AtomicLong(
-				System.currentTimeMillis());
-		boolean going_on = true;
-
 		for (int i = 0; i < terrain.length; i++) {
 			for (int j = 0; j < terrain[i].length; j++) {
 				terrain[i][j] = 0;

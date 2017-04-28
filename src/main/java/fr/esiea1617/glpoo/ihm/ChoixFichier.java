@@ -12,6 +12,8 @@ import java.awt.event.ItemListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicLong;
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
@@ -24,6 +26,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 
 import org.apache.log4j.Logger;
+
+import fr.esiea1617.glpoo.domain.Child;
+import fr.esiea1617.glpoo.domain.Map;
 
 public class ChoixFichier extends JFrame {
 	
@@ -222,5 +227,6 @@ public class ChoixFichier extends JFrame {
 	      System.out.println("Enfant " + ChoixEnfant1.getSelectedItem());
 	    }               
 	  }
+	
 	
 }
