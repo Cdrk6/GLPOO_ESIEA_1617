@@ -6,6 +6,9 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +17,7 @@ import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -37,6 +41,13 @@ public class ChoixFichier extends JFrame {
 	JButton fichier6;
 	JButton fichier7;
 	JButton fichier8;
+	JButton play;
+	
+	String[] Terrain = {"Terrain 1","Terrain 2","Terrain 3","Terrain 4","Terrain 5","Terrain 6"};
+	JComboBox ChoixTerrain = new JComboBox(Terrain);
+	String[] Enfant1 = {"Enfant 1","Enfant 2","Enfant 3","Enfant 4","Enfant 5","Enfant 6"};
+	JComboBox ChoixEnfant1 = new JComboBox(Enfant1);
+	
 	
 	public ChoixFichier(){
 		setTitle("Chasse aux oeufs");
@@ -49,6 +60,21 @@ public class ChoixFichier extends JFrame {
 			panel3 = setBackgroundImage(this, new File("src/main/ressources/menu.png"));
 			panel3.setLayout(null);
 			
+			ChoixTerrain.addItemListener(new ItemState());
+			ChoixTerrain.addActionListener(new ActionTerrain());
+			ChoixTerrain.setBounds(200,300,100,30);
+			panel3.add(ChoixTerrain);
+			
+			
+			ChoixEnfant1.addItemListener(new ItemState());
+			ChoixEnfant1.addActionListener(new ActionEnfant());
+			ChoixEnfant1.setBounds(400,300,100,30);
+			panel3.add(ChoixEnfant1);
+			
+			play = new JButton(new Terrain1Action("PLAY"));
+			play.setBounds(300, 400, 100, 50);
+			panel3.add(play);
+			/*
 			fichier1 = new JButton(new fichier1Action("Fichier 1"));
 			fichier1.setBounds(125, 285, 100, 50);
 			panel3.add(fichier1);
@@ -79,7 +105,7 @@ public class ChoixFichier extends JFrame {
 	        
 	        fichier8 = new JButton(new fichier8Action("Fichier 8"));
 	        fichier8.setBounds(275, 485, 100, 50);
-			panel3.add(fichier8);
+			panel3.add(fichier8);*/
 			
 			add(panel3);
 		} catch (IOException e1) {
@@ -107,14 +133,14 @@ public class ChoixFichier extends JFrame {
 		return panel;
 	}
 	
-	private class fichier1Action extends AbstractAction {
+	private class Terrain1Action extends AbstractAction {
 		
-		public fichier1Action(String text) {
+		public Terrain1Action(String text) {
 			super(text);
 		}
 
 		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 1");
+			LOGGER.debug("Ouverture du Terrain 1");
 			dispose();
 			JFrame petitest = new JFrame();
 			petitest.setTitle("Chasse aux oeufs");
@@ -128,89 +154,48 @@ public class ChoixFichier extends JFrame {
 		
 	}
 	
-	private class fichier2Action extends AbstractAction {
-		
-		public fichier2Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 2");
-		}
-		
-	}
+	int ConversionTerrain(){
+		String map = new String(ChoixTerrain.getSelectedItem().toString());
+		int a=0;
+	    if(map.equals("Terrain 1")){
+	    	a = 1;
+	    }
+	    if(map.equals("Terrain 2")){
+	    	a = 2;
+	    }
+	    if(map.equals("Terrain 3")){
+	    	a = 3;
+	    }
+	    if(map.equals("Terrain 4")){
+	    	a = 4;
+	    }
+	    if(map.equals("Terrain 5")){
+	    	a = 5;
+	    }
+	    if(map.equals("Terrain 6")){
+	    	a = 6;
+	    }
+	    return a;
+    }
 	
-	private class fichier3Action extends AbstractAction {
-		
-		public fichier3Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 3");
-		}
-		
-	}
-
-	private class fichier4Action extends AbstractAction {
-		
-		public fichier4Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 4");
-		}
-		
-	}
 	
-	private class fichier5Action extends AbstractAction {
-		
-		public fichier5Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 5");
-		}
-		
-	}
+	class ItemState implements ItemListener{
+	    public void itemStateChanged(ItemEvent e) {
+	      System.out.println("événement déclenché sur : " + e.getItem());
+	    }               
+	  }
 	
-	private class fichier6Action extends AbstractAction {
-		
-		public fichier6Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 6");
-		}
-		
-	}
+	class ActionTerrain implements ActionListener{
+	    public void actionPerformed(ActionEvent e) {
+	    	String map = new String(ChoixTerrain.getSelectedItem().toString());	
+	    	System.out.println("Terrain " + map);
+	    }               
+	  }
 	
-	private class fichier7Action extends AbstractAction {
-		
-		public fichier7Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 7");
-		}
-		
-	}
-	
-	private class fichier8Action extends AbstractAction {
-		
-		public fichier8Action(String text) {
-			super(text);
-		}
-
-		public void actionPerformed(ActionEvent arg0) {
-			LOGGER.debug("Ouverture du fichier 8");
-			
-		}
-		
-	}
+	class ActionEnfant implements ActionListener{
+	    public void actionPerformed(ActionEvent e) {
+	      System.out.println("Enfant " + ChoixEnfant1.getSelectedItem());
+	    }               
+	  }
 	
 }
